@@ -10,12 +10,13 @@ let package = Package(
     .library(name: "GoogleTagManager", targets: ["GoogleTagManager"])
   ],
   dependencies: [
-    // Dependencies declare other packages that this package depends on.
+    .package(name: "GoogleAnalytics", url: "https://github.com/Nonnus/GoogleAnalytics-iOS", branch: "main"),
   ],
   targets: [
     .binaryTarget(
       name: "GoogleTagManager",
-      path: "GoogleTagManager.xcframework"
+      path: "GoogleTagManager.xcframework",
+      dependencies: ["GoogleAnalytics"]
     )
   ]
 )
